@@ -5,23 +5,9 @@
   "homepage": "https://github.com/icebob/vue-form-generator",
   "main": "dist/vfg.js",
   "scripts": {
-    "prebuild": "npm run test",
     "build:core": "cross-env FULL_BUNDLE=false webpack --progress --config webpack.build.config.js --define process.env.FULL_BUNDLE=false --output-filename=vfg-core.js",
     "build:full": "cross-env FULL_BUNDLE=true  webpack --progress --config webpack.build.config.js --define process.env.FULL_BUNDLE=true",
-    "build": "npm run build:core && npm run build:full",
-    "dev": "webpack-dev-server --config webpack.dev.config.js --inline --hot --content-base dev/",
-    "lint": "eslint --ext=.js,.vue src test/unit/specs",
-    "coverall": "cat ./test/unit/coverage/lcov.info | ./node_modules/coveralls/bin/coveralls.js",
-    "coverage": "npm run test && npm run coverall",
-    "changelog": "conventional-changelog -i CHANGELOG.md -s",
-    "changelog:full": "conventional-changelog -i CHANGELOG.md -s -r 0",
-    "docs": "cd docs && gitbook serve",
-    "unit": "karma start test/unit/karma.conf.js",
-    "e2e": "node test/e2e/runner.js",
-    "pretest": "npm run lint",
-    "test": "npm run unit",
-    "ci": "karma start test/unit/karma.conf.js --auto-watch --no-single-run --reporters=dots --port=9877",
-    "version": "bumped release"
+    "build": "npm run build:core && npm run build:full"
   },
   "keywords": [
     "vue",
